@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders empty countries list correctly 1`] = `[Function]`;
+
+exports[`renders filled countries list correctly 1`] = `
+<RCTScrollView
+  ListEmptyComponent={[Function]}
+  data={
+    [
+      {
+        "capital": [
+          "Capital1",
+        ],
+        "currencies": {
+          "C1": {
+            "name": "currenycy1",
+            "symbol": "$",
+          },
+        },
+        "flag": "🇧🇷",
+        "name": {
+          "common": "Country1",
+          "official": "Official1",
+        },
+      },
+      {
+        "capital": [
+          "Capital2",
+        ],
+        "currencies": {
+          "C2": {
+            "name": "currenycy2",
+            "symbol": "$",
+          },
+        },
+        "flag": "🇺🇸",
+        "name": {
+          "common": "Country2",
+          "official": "Official2",
+        },
+      },
+    ]
+  }
+  getItem={[Function]}
+  getItemCount={[Function]}
+  keyExtractor={[Function]}
+  onContentSizeChange={[Function]}
+  onLayout={[Function]}
+  onMomentumScrollBegin={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={0.0001}
+  stickyHeaderIndices={[]}
+  viewabilityConfigCallbackPairs={[]}
+>
+  <View>
+    <View
+      onFocusCapture={[Function]}
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          {
+            "backgroundColor": "#fff",
+            "borderRadius": 16,
+            "borderWidth": 2,
+            "margin": 10,
+            "padding": 16,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginBottom": 20,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "flexWrap": "wrap",
+                "fontSize": 30,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Country1
+          </Text>
+          <Text
+            style={
+              {
+                "fontSize": 30,
+              }
+            }
+          >
+            🇧🇷
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "marginBottom": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "fontSize": 18,
+              }
+            }
+          >
+            🌎 Name: 
+            Official1
+          </Text>
+          <Text
+            style={
+              {
+                "fontSize": 18,
+              }
+            }
+          >
+            🏠 Capital: 
+            Capital1
+          </Text>
+          <Text
+            style={
+              {
+                "fontSize": 18,
+              }
+            }
+          >
+            💵 Currency: 
+            C1 ($) - currenycy1
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      onFocusCapture={[Function]}
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          {
+            "backgroundColor": "#fff",
+            "borderRadius": 16,
+            "borderWidth": 2,
+            "margin": 10,
+            "padding": 16,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginBottom": 20,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "flexWrap": "wrap",
+                "fontSize": 30,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Country2
+          </Text>
+          <Text
+            style={
+              {
+                "fontSize": 30,
+              }
+            }
+          >
+            🇺🇸
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "marginBottom": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "fontSize": 18,
+              }
+            }
+          >
+            🌎 Name: 
+            Official2
+          </Text>
+          <Text
+            style={
+              {
+                "fontSize": 18,
+              }
+            }
+          >
+            🏠 Capital: 
+            Capital2
+          </Text>
+          <Text
+            style={
+              {
+                "fontSize": 18,
+              }
+            }
+          >
+            💵 Currency: 
+            C2 ($) - currenycy2
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

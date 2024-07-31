@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<RCTSafeAreaView
+  style={
+    {
+      "backgroundColor": "#eee",
+      "flex": 1,
+      "paddingTop": null,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+        "height": 30,
+        "justifyContent": "space-between",
+        "margin": 10,
+        "marginTop": 30,
+        "maxHeight": 30,
+        "minHeight": 30,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "flex": 1,
+          "fontSize": 20,
+        }
+      }
+    >
+      Filter by name:
+    </Text>
+    <TextInput
+      style={
+        {
+          "backgroundColor": "#fff",
+          "borderColor": "#000",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "flex": 1,
+          "fontSize": 20,
+          "padding": 2,
+        }
+      }
+    />
+  </View>
+  <RCTScrollView
+    ListEmptyComponent={[Function]}
+    data={[]}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={0.0001}
+    stickyHeaderIndices={[]}
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        style={
+          {
+            "backgroundColor": "#fff",
+            "borderRadius": 16,
+            "borderWidth": 2,
+            "margin": 10,
+            "padding": 16,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "fontSize": 18,
+            }
+          }
+        >
+          No countries matching the filter criteria.
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;
