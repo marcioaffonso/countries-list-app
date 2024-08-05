@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useDeferredValue } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
 export default function CountriesList({ countries, onRefresh, refreshing }) {
+  const deferredCustomers = useDeferredValue(countries);
   return (
     <FlatList
-      data={countries}
+      data={deferredCustomers}
       renderItem={({ item }) => (
         <View style={styles.countryCard}>
           <View style={styles.nameContainer}>
