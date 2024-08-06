@@ -1,33 +1,33 @@
 import React, { useDeferredValue } from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Pressable } from 'react-native';
+import { useNavigation, NavigationProp } from '@react-navigation/native';
 import PropTypes from 'prop-types';
+import { ScreensParams } from '../types/ScreensParams';
 
 export default function CountriesList({ countries, onRefresh, refreshing }) {
   const deferredCustomers = useDeferredValue(countries);
+  const navigation = useNavigation<NavigationProp<ScreensParams>>();
   return (
     <FlatList
       data={deferredCustomers}
       renderItem={({ item }) => (
-        <View style={styles.countryCard}>
-          <View style={styles.nameContainer}>
-            <Text style={styles.name}>{item.name.common}</Text>
-            <Text style={styles.flag}>{item.flag}</Text>
-          </View>
-          <View style={styles.details}>
-            <Text style={styles.detailsText}>🌎 Name: { item.name.official }</Text>
-            <Text style={styles.detailsText}>🏠 Capital: { item.capital.join(', ') }</Text>
-            <Text style={styles.detailsText}>
-              💵 Currency: { Object.keys(item.currencies).map((key) => {
-                const currency = item.currencies[key];
-                return `${key} (${currency.symbol}) - ${currency.name}`;
-              }).join(', ') }
-            </Text>
-          </View>
+        <View style={styles.countryContainer}>
+          <Pressable onPress={() =>
+              navigation.navigate('CountryDetails', { countryName: item.name.common })}>
+            <View style={styles.countryCard}>
+              <Text style={styles.name}>{item.name.common}</Text>
+              <Text style={styles.flag}>{item.flag}</Text>
+            </View>
+          </Pressable>
         </View>
       )}
       ListEmptyComponent={() => (
-        <View style={styles.countryCard}>
-          <Text style={styles.detailsText}>No countries matching the filter criteria.</Text>
+        <View style={styles.countryContainer}>
+          <View style={styles.countryCard}>
+            <Text style={styles.countryText}>
+              No countries matching the filter criteria.
+            </Text>
+          </View>
         </View>
       )}
       onRefresh={onRefresh}
@@ -43,30 +43,27 @@ CountriesList.propTypes = {
 };
 
 const styles = StyleSheet.create({
+  countryContainer: {
+    padding: 10,
+  },
   countryCard: {
     backgroundColor: '#fff',
     borderRadius: 16,
     borderWidth: 2,
-    margin: 10,
-    padding: 16
-  },
-  nameContainer: {
+    padding: 16,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 20
   },
   name: {
     fontSize: 30,
     fontWeight: 'bold',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    maxWidth: '80%'
   },
   flag: {
     fontSize: 30
   },
-  details: {
-    marginBottom: 10
-  },
-  detailsText: {
+  countryText: {
     fontSize: 18
   },
 });

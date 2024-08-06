@@ -1,6 +1,6 @@
 import { Country } from "../../src/types/Country";
 
-export const countries: Country[] = [
+export const mockCountries: Country[] = [
   {
     name: { common: 'Country1', official: 'Official1' },
     flag: '🇧🇷',

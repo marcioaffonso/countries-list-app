@@ -1,6 +1,6 @@
 {
   "name": "countries-list-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -11,15 +11,19 @@
     "test": "jest",
     "test-update": "jest --updateSnapshot"
   },
-  "jest": { 
+  "jest": {
     "preset": "jest-expo",
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
     ],
-    "modulePathIgnorePatterns": ["./__tests__/mocks"]
+    "modulePathIgnorePatterns": [
+      "./__tests__/mocks"
+    ],
+    "testEnvironment": "jsdom"
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.1",
+    "@react-navigation/native-stack": "^6.11.0",
     "@types/react": "~18.2.79",
     "expo": "~51.0.24",
     "expo-status-bar": "~1.12.1",

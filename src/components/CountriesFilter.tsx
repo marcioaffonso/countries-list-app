@@ -23,12 +23,12 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    margin: 10,
-    marginTop: 30,
-    minHeight: 30,
-    maxHeight: 30,
-    height: 30,
+    justifyContent: 'center',
+    marginHorizontal: 10,
+    marginBottom: 10,
+    minHeight: 50,
+    maxHeight: 50,
+    height: 50,
   },
   filterText: {
     flex: 1,
@@ -36,11 +36,12 @@ const styles = StyleSheet.create({
   },
   filterInput: {
     flex: 1,
-    borderRadius: 5,
+    borderRadius: 10,
     borderWidth: 1,
     backgroundColor: '#fff',
     borderColor: '#000',
     fontSize: 20,
-    padding: 2
+    paddingVertical: 2,
+    paddingHorizontal: 5
   },
 });

@@ -1,96 +1,209 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<RCTSafeAreaView
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
   style={
-    {
-      "backgroundColor": "#eee",
-      "flex": 1,
-      "paddingTop": null,
-    }
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
   }
 >
-  <View
+  <RNSScreenStack
     style={
       {
-        "alignItems": "center",
         "flex": 1,
-        "flexDirection": "row",
-        "height": 30,
-        "justifyContent": "space-between",
-        "margin": 10,
-        "marginTop": 30,
-        "maxHeight": 30,
-        "minHeight": 30,
       }
     }
   >
-    <Text
-      style={
+    <RNSScreen
+      collapsable={false}
+      fullScreenSwipeShadowEnabled={false}
+      gestureResponseDistance={
         {
-          "flex": 1,
-          "fontSize": 20,
+          "bottom": -1,
+          "end": -1,
+          "start": -1,
+          "top": -1,
         }
       }
+      hasLargeHeader={false}
+      nativeBackButtonDismissalEnabled={false}
+      onAppear={[Function]}
+      onDisappear={[Function]}
+      onDismissed={[Function]}
+      onGestureCancel={[Function]}
+      onHeaderBackButtonClicked={[Function]}
+      onNativeDismissCancelled={[Function]}
+      onTransitionProgress={[Function]}
+      onWillAppear={[Function]}
+      onWillDisappear={[Function]}
+      replaceAnimation="push"
+      sheetAllowedDetents="large"
+      sheetCornerRadius={-1}
+      sheetExpandsWhenScrolledToEdge={true}
+      sheetGrabberVisible={false}
+      sheetLargestUndimmedDetent="all"
+      stackPresentation="push"
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      swipeDirection="horizontal"
     >
-      Filter by name:
-    </Text>
-    <TextInput
-      style={
-        {
-          "backgroundColor": "#fff",
-          "borderColor": "#000",
-          "borderRadius": 5,
-          "borderWidth": 1,
-          "flex": 1,
-          "fontSize": 20,
-          "padding": 2,
-        }
-      }
-    />
-  </View>
-  <RCTScrollView
-    ListEmptyComponent={[Function]}
-    data={[]}
-    getItem={[Function]}
-    getItemCount={[Function]}
-    keyExtractor={[Function]}
-    onContentSizeChange={[Function]}
-    onLayout={[Function]}
-    onMomentumScrollBegin={[Function]}
-    onMomentumScrollEnd={[Function]}
-    onScroll={[Function]}
-    onScrollBeginDrag={[Function]}
-    onScrollEndDrag={[Function]}
-    removeClippedSubviews={false}
-    renderItem={[Function]}
-    scrollEventThrottle={0.0001}
-    stickyHeaderIndices={[]}
-    viewabilityConfigCallbackPairs={[]}
-  >
-    <View>
       <View
+        accessibilityElementsHidden={false}
+        importantForAccessibility="auto"
         style={
           {
-            "backgroundColor": "#fff",
-            "borderRadius": 16,
-            "borderWidth": 2,
-            "margin": 10,
-            "padding": 16,
+            "flex": 1,
+            "flexDirection": "column-reverse",
           }
         }
       >
-        <Text
+        <View
+          collapsable={false}
           style={
-            {
-              "fontSize": 18,
-            }
+            [
+              {
+                "flex": 1,
+              },
+              {
+                "backgroundColor": "rgb(242, 242, 242)",
+              },
+              undefined,
+            ]
           }
         >
-          No countries matching the filter criteria.
-        </Text>
+          <RCTSafeAreaView
+            style={
+              {
+                "backgroundColor": "#eee",
+                "flex": 1,
+                "paddingTop": null,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "height": 50,
+                  "justifyContent": "center",
+                  "marginBottom": 10,
+                  "marginHorizontal": 10,
+                  "maxHeight": 50,
+                  "minHeight": 50,
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "flex": 1,
+                    "fontSize": 20,
+                  }
+                }
+              >
+                Filter by name:
+              </Text>
+              <TextInput
+                style={
+                  {
+                    "backgroundColor": "#fff",
+                    "borderColor": "#000",
+                    "borderRadius": 10,
+                    "borderWidth": 1,
+                    "flex": 1,
+                    "fontSize": 20,
+                    "paddingHorizontal": 5,
+                    "paddingVertical": 2,
+                  }
+                }
+              />
+            </View>
+            <RCTScrollView
+              ListEmptyComponent={[Function]}
+              data={[]}
+              getItem={[Function]}
+              getItemCount={[Function]}
+              keyExtractor={[Function]}
+              onContentSizeChange={[Function]}
+              onLayout={[Function]}
+              onMomentumScrollBegin={[Function]}
+              onMomentumScrollEnd={[Function]}
+              onScroll={[Function]}
+              onScrollBeginDrag={[Function]}
+              onScrollEndDrag={[Function]}
+              refreshing={false}
+              removeClippedSubviews={false}
+              renderItem={[Function]}
+              scrollEventThrottle={0.0001}
+              stickyHeaderIndices={[]}
+              viewabilityConfigCallbackPairs={[]}
+            >
+              <View>
+                <View
+                  style={
+                    {
+                      "padding": 10,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "backgroundColor": "#fff",
+                        "borderRadius": 16,
+                        "borderWidth": 2,
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                        "padding": 16,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        {
+                          "fontSize": 18,
+                        }
+                      }
+                    >
+                      No countries matching the filter criteria.
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </RCTScrollView>
+          </RCTSafeAreaView>
+        </View>
       </View>
-    </View>
-  </RCTScrollView>
-</RCTSafeAreaView>
+      <RNSScreenStackHeaderConfig
+        backButtonInCustomView={false}
+        backTitleVisible={true}
+        backgroundColor="rgb(255, 255, 255)"
+        color="rgb(0, 122, 255)"
+        direction="ltr"
+        disableBackButtonMenu={false}
+        hidden={false}
+        hideBackButton={false}
+        largeTitleHideShadow={false}
+        title="Countries"
+        titleColor="rgb(28, 28, 30)"
+        topInsetEnabled={false}
+        translucent={false}
+      />
+    </RNSScreen>
+  </RNSScreenStack>
+</RNCSafeAreaProvider>
 `;

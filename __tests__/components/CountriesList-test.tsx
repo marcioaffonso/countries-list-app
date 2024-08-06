@@ -1,15 +1,21 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { expect, test } from '@jest/globals';
+import { expect, test, jest } from '@jest/globals';
 import CountriesList from '../../src/components/CountriesList';
-import { countries } from '../mocks/countries';
+import { mockCountries } from '../mocks/mockCountries';
 
-test('renders empty countries list correctly', () => {
+jest.mock('@react-navigation/native', () => ({
+  useNavigation: () => ({
+    navigate: jest.fn(),
+  }),
+}));
+
+test('renders empty list of countries correctly', () => {
   const tree = renderer.create(<CountriesList countries={[]} />).toJSON;
   expect(tree).toMatchSnapshot();
 });
 
-test('renders filled countries list correctly', () => {
-  const tree = renderer.create(<CountriesList countries={countries} />);
+test('renders filled list of countries correctly', () => {
+  const tree = renderer.create(<CountriesList countries={mockCountries} />);
   expect(tree).toMatchSnapshot();
 });

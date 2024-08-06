@@ -4,7 +4,9 @@ import { countries_api } from '../../config.json';
 
 class CountryStore {
   countries: Country[];
+  countryDetails: Country;
   loading: boolean = false;
+  loadingDetails: boolean = false;
   filter: string = '';
   error: string;
 
@@ -17,8 +19,7 @@ class CountryStore {
     this.loading = true;
     this.error = null;
     try {
-      const response = await fetch(countries_api.api_url
-        .concat(`?fields=${countries_api.fields.join(',')}`));
+      const response = await fetch(countries_api.api_url.concat('/all?fields=name,flag'));
       const countries = await response.json();
       runInAction(() => {
         this.countries = countries.sort((c1: Country, c2: Country) =>
@@ -27,8 +28,28 @@ class CountryStore {
       });
     } catch (e) { 
       runInAction(() => {
-        this.error = "Error fetching countries."
+        this.error = "Error fetching countries.";
         this.loading = false;
+      });
+    }
+  }
+
+  async loadCountryDetails(countryName: string): Promise<void> {
+    this.countryDetails = null;
+    this.loadingDetails = true;
+    this.error = null;
+    try {
+      const response = await fetch(countries_api.api_url
+        .concat(`/name/${countryName}?fields=${countries_api.fields.join(',')}`));
+      const countries = await response.json();
+      runInAction(() => {
+        this.countryDetails = countries[0];
+        this.loadingDetails = false;
+      });
+    } catch (e) { 
+      runInAction(() => {
+        this.error = "Error loading country.";
+        this.loadingDetails = false;
       });
     }
   }
@@ -44,6 +65,10 @@ class CountryStore {
 
   get refreshing(): boolean {
     return this.loading && Boolean(this.countries);
+  }
+
+  get refreshingDetails(): boolean {
+    return this.loadingDetails && Boolean(this.countryDetails);
   }
 }
 

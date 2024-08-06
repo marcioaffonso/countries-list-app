@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders country details correctly 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#eee",
+      "flex": 1,
+    }
+  }
+  refreshControl={
+    <RefreshControlMock
+      onRefresh={[Function]}
+      refreshing={false}
+    />
+  }
+>
+  <RCTRefreshControl />
+  <View>
+    <Text
+      style={
+        {
+          "fontSize": 200,
+          "textAlign": "center",
+        }
+      }
+    >
+      🇧🇷
+    </Text>
+    <Text
+      style={
+        {
+          "fontSize": 40,
+          "textAlign": "center",
+        }
+      }
+    >
+      Country1
+    </Text>
+    <View
+      style={
+        {
+          "marginTop": 60,
+          "paddingHorizontal": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "fontSize": 24,
+          }
+        }
+      >
+        🌎 Name: 
+        Official1
+      </Text>
+      <Text
+        style={
+          {
+            "fontSize": 24,
+          }
+        }
+      >
+        🏠 Capital: 
+        Capital1
+      </Text>
+      <Text
+        style={
+          {
+            "fontSize": 24,
+          }
+        }
+      >
+        💵 Currency: 
+        C1 ($) - currenycy1
+      </Text>
+    </View>
+  </View>
+</RCTScrollView>
+`;

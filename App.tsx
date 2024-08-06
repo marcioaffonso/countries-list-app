@@ -1,39 +1,21 @@
-import React, { useMemo } from 'react';
-import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
-import { observer } from 'mobx-react-lite';
-import CountriesFilter from './src/components/CountriesFilter';
-import CountriesList from './src/components/CountriesList';
-import countryStore from './src/stores/countryStore';
-import AppLoader from './src/components/AppLoader';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import CountriesListScreen from './src/screens/CountriesListScreen';
+import CountryDetailsScreen from './src/screens/CountryDetailsScreen';
 
-const App = () => {
-  const countriesFilter = useMemo(
-    () => <CountriesFilter onFilterChange={countryStore.setFilter} />,
-    [countryStore.setFilter]
-  );
+const Stack = createNativeStackNavigator();
+
+export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      {countryStore.loading && !countryStore.refreshing ?
-        <AppLoader /> :
-        <>
-          {countriesFilter}
-          <CountriesList
-            countries={countryStore.filteredCountries}
-            onRefresh={countryStore.loadCountries}
-            refreshing={countryStore.refreshing}
-          />
-        </>
-      }
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Countries" component={CountriesListScreen} />
+        <Stack.Screen name="CountryDetails"
+          component={CountryDetailsScreen}
+          options={({ route }) => ({ title: route.params['countryName'] })}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
-
-export default observer(App);
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#eee',
-    paddingTop: StatusBar.currentHeight
-  }
-});

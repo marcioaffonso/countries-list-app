@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders empty countries list correctly 1`] = `[Function]`;
+exports[`renders empty list of countries correctly 1`] = `[Function]`;
 
-exports[`renders filled countries list correctly 1`] = `
+exports[`renders filled list of countries correctly 1`] = `
 <RCTScrollView
   ListEmptyComponent={[Function]}
   data={
@@ -66,81 +66,75 @@ exports[`renders filled countries list correctly 1`] = `
       <View
         style={
           {
-            "backgroundColor": "#fff",
-            "borderRadius": 16,
-            "borderWidth": 2,
-            "margin": 10,
-            "padding": 16,
+            "padding": 10,
           }
         }
       >
         <View
-          style={
+          accessibilityState={
             {
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "marginBottom": 20,
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
             }
           }
-        >
-          <Text
-            style={
-              {
-                "flexWrap": "wrap",
-                "fontSize": 30,
-                "fontWeight": "bold",
-              }
-            }
-          >
-            Country1
-          </Text>
-          <Text
-            style={
-              {
-                "fontSize": 30,
-              }
-            }
-          >
-            🇧🇷
-          </Text>
-        </View>
-        <View
-          style={
+          accessibilityValue={
             {
-              "marginBottom": 10,
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
             }
           }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
         >
-          <Text
+          <View
             style={
               {
-                "fontSize": 18,
+                "backgroundColor": "#fff",
+                "borderRadius": 16,
+                "borderWidth": 2,
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "padding": 16,
               }
             }
           >
-            🌎 Name: 
-            Official1
-          </Text>
-          <Text
-            style={
-              {
-                "fontSize": 18,
+            <Text
+              style={
+                {
+                  "flexWrap": "wrap",
+                  "fontSize": 30,
+                  "fontWeight": "bold",
+                  "maxWidth": "80%",
+                }
               }
-            }
-          >
-            🏠 Capital: 
-            Capital1
-          </Text>
-          <Text
-            style={
-              {
-                "fontSize": 18,
+            >
+              Country1
+            </Text>
+            <Text
+              style={
+                {
+                  "fontSize": 30,
+                }
               }
-            }
-          >
-            💵 Currency: 
-            C1 ($) - currenycy1
-          </Text>
+            >
+              🇧🇷
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -152,81 +146,75 @@ exports[`renders filled countries list correctly 1`] = `
       <View
         style={
           {
-            "backgroundColor": "#fff",
-            "borderRadius": 16,
-            "borderWidth": 2,
-            "margin": 10,
-            "padding": 16,
+            "padding": 10,
           }
         }
       >
         <View
-          style={
+          accessibilityState={
             {
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "marginBottom": 20,
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
             }
           }
-        >
-          <Text
-            style={
-              {
-                "flexWrap": "wrap",
-                "fontSize": 30,
-                "fontWeight": "bold",
-              }
-            }
-          >
-            Country2
-          </Text>
-          <Text
-            style={
-              {
-                "fontSize": 30,
-              }
-            }
-          >
-            🇺🇸
-          </Text>
-        </View>
-        <View
-          style={
+          accessibilityValue={
             {
-              "marginBottom": 10,
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
             }
           }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
         >
-          <Text
+          <View
             style={
               {
-                "fontSize": 18,
+                "backgroundColor": "#fff",
+                "borderRadius": 16,
+                "borderWidth": 2,
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "padding": 16,
               }
             }
           >
-            🌎 Name: 
-            Official2
-          </Text>
-          <Text
-            style={
-              {
-                "fontSize": 18,
+            <Text
+              style={
+                {
+                  "flexWrap": "wrap",
+                  "fontSize": 30,
+                  "fontWeight": "bold",
+                  "maxWidth": "80%",
+                }
               }
-            }
-          >
-            🏠 Capital: 
-            Capital2
-          </Text>
-          <Text
-            style={
-              {
-                "fontSize": 18,
+            >
+              Country2
+            </Text>
+            <Text
+              style={
+                {
+                  "fontSize": 30,
+                }
               }
-            }
-          >
-            💵 Currency: 
-            C2 ($) - currenycy2
-          </Text>
+            >
+              🇺🇸
+            </Text>
+          </View>
         </View>
       </View>
     </View>
