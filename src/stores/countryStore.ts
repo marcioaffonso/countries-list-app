@@ -18,7 +18,7 @@ class CountryStore {
     this.loading = true;
     this.error = null;
     try {
-      const path = this.filter ? `name/${this.filter}` : 'all';
+      const path = this.filter.trim() ? `name/${this.filter}` : 'all';
       const response = await fetch(`${countries_api.api_url}/${path}?fields=name,flag`);
       const countries = response.ok ? await response.json() : [];
       runInAction(() => {

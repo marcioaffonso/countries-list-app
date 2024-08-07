@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 import { ScreensParams } from '../types/ScreensParams';
 
 export default function CountriesList({ countries, onRefresh, refreshing }) {
-  const deferredCustomers = useDeferredValue(countries);
+  const deferredCountries = useDeferredValue(countries);
   const navigation = useNavigation<NavigationProp<ScreensParams>>();
   return (
     <FlatList
-      data={deferredCustomers}
+      data={deferredCountries}
       renderItem={({ item }) => (
         <View style={styles.countryContainer}>
           <Pressable onPress={() =>
