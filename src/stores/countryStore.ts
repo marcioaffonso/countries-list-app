@@ -12,21 +12,21 @@ class CountryStore {
 
   constructor() {
     makeAutoObservable(this);
-    this.loadCountries();
   }
 
   async loadCountries(): Promise<void> {
     this.loading = true;
     this.error = null;
     try {
-      const response = await fetch(countries_api.api_url.concat('/all?fields=name,flag'));
-      const countries = await response.json();
+      const path = this.filter ? `name/${this.filter}` : 'all';
+      const response = await fetch(`${countries_api.api_url}/${path}?fields=name,flag`);
+      const countries = response.ok ? await response.json() : [];
       runInAction(() => {
         this.countries = countries.sort((c1: Country, c2: Country) =>
           c1.name.common.localeCompare(c2.name.common));
         this.loading = false;
       });
-    } catch (e) { 
+    } catch (e) {
       runInAction(() => {
         this.error = "Error fetching countries.";
         this.loading = false;
@@ -39,8 +39,8 @@ class CountryStore {
     this.loadingDetails = true;
     this.error = null;
     try {
-      const response = await fetch(countries_api.api_url
-        .concat(`/name/${countryName}?fields=${countries_api.fields.join(',')}`));
+      const url = `${countries_api.api_url}/name/${countryName}?fields=${countries_api.fields.join(',')}`;
+      const response = await fetch(url);
       const countries = await response.json();
       runInAction(() => {
         this.countryDetails = countries[0];
@@ -56,11 +56,6 @@ class CountryStore {
 
   setFilter = (value: string) => {
     this.filter = value;
-  }
-
-  get filteredCountries(): Country[] {
-    return this.countries.filter((country) =>
-      country.name.common.toLowerCase().startsWith(this.filter.toLowerCase()));
   }
 
   get refreshing(): boolean {

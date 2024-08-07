@@ -60,9 +60,16 @@ exports[`renders correctly 1`] = `
     onLayout={[Function]}
     onMomentumScrollBegin={[Function]}
     onMomentumScrollEnd={[Function]}
+    onRefresh={[MockFunction]}
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[MockFunction]}
+        refreshing={false}
+      />
+    }
     refreshing={false}
     removeClippedSubviews={false}
     renderItem={[Function]}
@@ -70,6 +77,7 @@ exports[`renders correctly 1`] = `
     stickyHeaderIndices={[]}
     viewabilityConfigCallbackPairs={[]}
   >
+    <RCTRefreshControl />
     <View>
       <View
         style={

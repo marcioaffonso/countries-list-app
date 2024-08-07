@@ -11,7 +11,7 @@ test('renders correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Renders App loading correctly', () => {
+test('onFilterChange method is called correctly', () => {
   const mockValue = 'the-value';
   const tree = renderer.create(<CountriesFilter onFilterChange={onFilterhMock} />);
   tree.root.findByType(TextInput).props.onChangeText(mockValue);

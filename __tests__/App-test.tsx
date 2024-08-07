@@ -7,11 +7,11 @@ jest.mock('../src/stores/countryStore', () => {
   return {
     loading: false,
     refreshing: false,
-    filteredCountries: []
+    countries: []
   };
 });
 
-test('renders correctly', () => {
+test('renders App correctly', () => {
   const tree = renderer.create(<App />).toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -15,7 +15,8 @@ jest.mock('../../src/stores/countryStore', () => {
   return {
     loading: false,
     refreshing: false,
-    filteredCountries: []
+    countries: [],
+    loadCountries: jest.fn()
   };
 });
 

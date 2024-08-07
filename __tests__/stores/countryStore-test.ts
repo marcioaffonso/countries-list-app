@@ -2,28 +2,25 @@ import { jest, expect, test } from '@jest/globals';
 import { mockCountries } from '../mocks/mockCountries';
 import countryStore from '../../src/stores/countryStore';
 
-let mockFetchData: object;
-
-// @ts-expect-error: mock global fetch 
-global.fetch = jest.fn(() => Promise.resolve({
-  json: () => Promise.resolve(mockFetchData)
+// @ts-expect-error: mock global fetch
+global.fetch = jest.fn((url: string) => Promise.resolve({
+  json: () => Promise.resolve(url.includes('/all') ? mockCountries : [mockCountries[0]]),
+  ok: true
 }));
 
 test('loads countries correctly', async () => {
-  mockFetchData = mockCountries;
   await countryStore.loadCountries();
-  expect(countryStore.filteredCountries).toEqual(mockCountries);
+  expect(countryStore.countries).toEqual(mockCountries);
 });
 
 test('filters countries correctly', async () => {
-  await countryStore.loadCountries();
   countryStore.setFilter('Country1');
-  expect(countryStore.filteredCountries.length).toEqual(1);
+  await countryStore.loadCountries();
+  expect(countryStore.countries.length).toEqual(1);
 });
 
 test('loads country details correctly', async () => {
   const mockCountryName = mockCountries[0].name.common;
-  mockFetchData = mockCountries.filter((_) => _.name.common === mockCountryName);
   await countryStore.loadCountryDetails(mockCountryName);
   expect(countryStore.countryDetails).toEqual(mockCountries[0]);
 });
